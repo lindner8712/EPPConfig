@@ -1,0 +1,41 @@
+﻿@page "/logger"
+@rendermode InteractiveServer
+
+<PageTitle>Logger</PageTitle>
+
+<MudText Typo="Typo.h4" GutterBottom="true">Logger</MudText>
+<MudText Typo="Typo.body2" Class="mb-4">Protokollierte Ereignisse</MudText>
+
+<MudDataGrid T="LogEntry" Items="@_entries" Bordered="true" Striped="true" Hover="true"
+             SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Eintraege</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="_search" Placeholder="Suchen..." Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0" />
+    </ToolBarContent>
+    <Columns>
+        <PropertyColumn Property="x => x.Zeitstempel" Title="Zeitstempel" />
+        <PropertyColumn Property="x => x.Ebene" Title="Ebene" />
+        <PropertyColumn Property="x => x.Nachricht" Title="Nachricht" />
+        <PropertyColumn Property="x => x.Quelle" Title="Quelle" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="LogEntry" />
+    </PagerContent>
+</MudDataGrid>
+
+@code {
+    private string _search = string.Empty;
+    private List<LogEntry> _entries = new();
+
+    private Func<LogEntry, bool> _quickFilter => entry =>
+    {
+        if (string.IsNullOrWhiteSpace(_search)) return true;
+        return entry.Nachricht.Contains(_search, StringComparison.OrdinalIgnoreCase)
+            || entry.Ebene.Contains(_search, StringComparison.OrdinalIgnoreCase)
+            || entry.Quelle.Contains(_search, StringComparison.OrdinalIgnoreCase);
+    };
+
+    public record LogEntry(DateTime Zeitstempel, string Ebene, string Nachricht, string Quelle);
+}

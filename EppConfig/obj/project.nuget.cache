@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "QSuFUrJUMC8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lindn\\source\\repos\\EppConfig\\EppConfig\\EppConfig.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lindn\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.10\\microsoft.aspnetcore.app.internal.assets.10.0.10.nupkg.sha512",
+    "C:\\Users\\Lindn\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.10\\microsoft.aspnetcore.components.webassembly.10.0.10.nupkg.sha512",
+    "C:\\Users\\Lindn\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\10.0.10\\microsoft.aspnetcore.components.webassembly.server.10.0.10.nupkg.sha512",
+    "C:\\Users\\Lindn\\.nuget\\packages\\microsoft.jsinterop.webassembly\\10.0.10\\microsoft.jsinterop.webassembly.10.0.10.nupkg.sha512",
+    "C:\\Users\\Lindn\\.nuget\\packages\\mudblazor\\9.7.0\\mudblazor.9.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

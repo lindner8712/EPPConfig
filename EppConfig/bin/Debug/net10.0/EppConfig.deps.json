@@ -1,0 +1,110 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "EppConfig/1.0.0": {
+        "dependencies": {
+          "EppConfig.Client": "1.0.0",
+          "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.10"
+        },
+        "runtime": {
+          "EppConfig.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Components.WebAssembly/10.0.10": {
+        "dependencies": {
+          "Microsoft.JSInterop.WebAssembly": "10.0.10"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
+            "assemblyVersion": "10.0.10.0",
+            "fileVersion": "10.0.1026.32716"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.WebAssembly.Server/10.0.10": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "10.0.10"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {
+            "assemblyVersion": "10.0.10.0",
+            "fileVersion": "10.0.1026.32716"
+          }
+        }
+      },
+      "Microsoft.JSInterop.WebAssembly/10.0.10": {
+        "runtime": {
+          "lib/net10.0/Microsoft.JSInterop.WebAssembly.dll": {
+            "assemblyVersion": "10.0.10.0",
+            "fileVersion": "10.0.1026.32716"
+          }
+        }
+      },
+      "MudBlazor/9.7.0": {
+        "runtime": {
+          "lib/net10.0/MudBlazor.dll": {
+            "assemblyVersion": "9.7.0.0",
+            "fileVersion": "9.7.0.0"
+          }
+        }
+      },
+      "EppConfig.Client/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "10.0.10",
+          "MudBlazor": "9.7.0"
+        },
+        "runtime": {
+          "EppConfig.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EppConfig/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Components.WebAssembly/10.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Zib7U6HmGw4Noj/+yJz1YuEJwo3XOV0iLezXDLFsrHTaC8L+KUOR/1+1tX7AAeipDG6jP3gPZOwpirk6G3LYQ==",
+      "path": "microsoft.aspnetcore.components.webassembly/10.0.10",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.10.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.WebAssembly.Server/10.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4VZTIYe3nJ3im3ILpcpPp9LJbJ43lYeDAJSQQosAogz889by8FRaMCpjo8YFeXLBFDGpNYJSBPNBYLdeq8bn1A==",
+      "path": "microsoft.aspnetcore.components.webassembly.server/10.0.10",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.server.10.0.10.nupkg.sha512"
+    },
+    "Microsoft.JSInterop.WebAssembly/10.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FjPAGQWbCP85FWY2Wl9opHSsY+u9nZb8Ui6eTVHEMY/RJateOhW78jEtC4QOQ/6slkS1MKyIAF6ZHIrUR1fX/w==",
+      "path": "microsoft.jsinterop.webassembly/10.0.10",
+      "hashPath": "microsoft.jsinterop.webassembly.10.0.10.nupkg.sha512"
+    },
+    "MudBlazor/9.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uWOgNn9B556J/TL8KFoSqpA3YD2heqOpK5etcofwlj1RiEX1IDy0NmwYE9urlTUQ8zProEK5GqwTBnoObFPN3g==",
+      "path": "mudblazor/9.7.0",
+      "hashPath": "mudblazor.9.7.0.nupkg.sha512"
+    },
+    "EppConfig.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

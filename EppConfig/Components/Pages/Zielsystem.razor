@@ -1,0 +1,96 @@
+﻿@page "/zielsystem"
+@rendermode InteractiveServer
+
+<PageTitle>Zielsystem</PageTitle>
+
+<MudText Typo="Typo.h4" GutterBottom="true">Zielsystem</MudText>
+<MudText Typo="Typo.body2" Class="mb-6">Verbindungseinstellungen fuer das Zielsystem</MudText>
+
+<MudPaper Elevation="2" Class="pa-6" Style="max-width: 640px;">
+    <MudForm @ref="_form" @bind-IsValid="_isValid">
+        <MudGrid Spacing="3">
+            <MudItem xs="12">
+                <MudTextField @bind-Value="_config.AmsNetId"
+                              Label="AMS NET ID"
+                              Placeholder="z.B. 192.168.1.1.1.1"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Router"
+                              Required="true"
+                              RequiredError="AMS NET ID ist erforderlich" />
+            </MudItem>
+            <MudItem xs="12">
+                <MudTextField @bind-Value="_config.PfadBeckhoff"
+                              Label="Pfad Beckhoff"
+                              Placeholder="z.B. C:\TwinCAT\..."
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.FolderOpen" />
+            </MudItem>
+            <MudItem xs="12">
+                <MudTextField @bind-Value="_config.PfadSiemens"
+                              Label="Pfad Siemens"
+                              Placeholder="z.B. C:\Siemens\..."
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.FolderOpen" />
+            </MudItem>
+            <MudItem xs="12">
+                <MudTextField @bind-Value="_config.PfadExport"
+                              Label="Pfad Export"
+                              Placeholder="z.B. C:\Export\..."
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.FileDownload" />
+            </MudItem>
+            <MudItem xs="12" Class="d-flex justify-end gap-2">
+                <MudButton Variant="Variant.Outlined" Color="Color.Secondary" OnClick="Zuruecksetzen">
+                    Zuruecksetzen
+                </MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Speichern" Disabled="!_isValid">
+                    Speichern
+                </MudButton>
+            </MudItem>
+        </MudGrid>
+    </MudForm>
+</MudPaper>
+
+@if (_gespeichert)
+{
+    <MudAlert Severity="Severity.Success" Class="mt-4" ShowCloseIcon="true" CloseIconClicked="() => _gespeichert = false">
+        Einstellungen erfolgreich gespeichert.
+    </MudAlert>
+}
+
+@code {
+    private MudForm _form = default!;
+    private bool _isValid;
+    private bool _gespeichert;
+
+    private ZielsystemConfig _config = new();
+
+    private async Task Speichern()
+    {
+        await _form.ValidateAsync();
+        if (_isValid)
+        {
+            // Hier koennte die Konfiguration persistiert werden
+            _gespeichert = true;
+        }
+    }
+
+    private async Task Zuruecksetzen()
+    {
+        _config = new();
+        _gespeichert = false;
+        await _form.ResetAsync();
+    }
+
+    private class ZielsystemConfig
+    {
+        public string AmsNetId { get; set; } = string.Empty;
+        public string PfadBeckhoff { get; set; } = string.Empty;
+        public string PfadSiemens { get; set; } = string.Empty;
+        public string PfadExport { get; set; } = string.Empty;
+    }
+}
+
+
+
+
