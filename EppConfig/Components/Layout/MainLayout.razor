@@ -1,4 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+@inject EppConfig.Services.BlocklyStateService BlocklyState
+@inject ISnackbar Snackbar
 
 <MudThemeProvider Theme="@_theme" />
 <MudPopoverProvider />
@@ -13,6 +16,12 @@
             <MudText Typo="Typo.h6">EppConfig</MudText>
         </div>
         <MudSpacer />
+        <MudTooltip Text="Blockly XML importieren">
+            <MudIconButton Icon="@Icons.Material.Filled.FileUpload" Color="Color.Primary" OnClick="ImportBlocklyXmlAsync" />
+        </MudTooltip>
+        <MudTooltip Text="Blockly XML exportieren">
+            <MudIconButton Icon="@Icons.Material.Filled.FileDownload" Color="Color.Primary" OnClick="ExportBlocklyXmlAsync" />
+        </MudTooltip>
         <MudChip T="string" Color="Color.Primary" Variant="Variant.Text" Icon="@Icons.Material.Filled.LightMode">
             Hell
         </MudChip>
@@ -52,6 +61,29 @@
     }
 
     private void DrawerToggle() => _drawerOpen = !_drawerOpen;
+
+    private async Task ImportBlocklyXmlAsync()
+    {
+        var importedXml = await JS.InvokeAsync<string>("blocklyInterop.importXmlFile");
+        if (!string.IsNullOrWhiteSpace(importedXml))
+        {
+            BlocklyState.SetXml(importedXml);
+            Snackbar.Add("Blockly-XML importiert.", Severity.Success);
+        }
+    }
+
+    private async Task ExportBlocklyXmlAsync()
+    {
+        var xml = BlocklyState.Xml;
+        if (string.IsNullOrWhiteSpace(xml))
+        {
+            xml = await JS.InvokeAsync<string>("blocklyInterop.getXml");
+            BlocklyState.SetXml(xml);
+        }
+
+        await JS.InvokeVoidAsync("blocklyInterop.exportXmlContent", xml, "eppconfig-blockly.xml");
+        Snackbar.Add("Blockly-XML exportiert.", Severity.Success);
+    }
 
     private readonly PaletteLight _lightPalette = new()
     {

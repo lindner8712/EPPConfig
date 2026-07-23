@@ -1,11 +1,13 @@
 ﻿using MudBlazor.Services;
 using EppConfig.Client.Pages;
 using EppConfig.Components;
+using EppConfig.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add MudBlazor services
 builder.Services.AddMudServices();
+builder.Services.AddScoped<BlocklyStateService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

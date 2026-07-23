@@ -2,19 +2,78 @@
 @page "/konfiguration"
 @rendermode InteractiveServer
 @inject IJSRuntime JS
+@inject EppConfig.Services.BlocklyStateService BlocklyState
+@implements IAsyncDisposable
 
 <PageTitle>Konfiguration</PageTitle>
 
-<div id="blockly-container"
-     style="width:100%;height:700px;border:1px solid red;">
+<div class="config-page">
+    <div class="config-page__workspace">
+        <div id="blockly-container" class="config-page__blockly-host"></div>
+    </div>
 </div>
 
 @code {
+    private DotNetObjectReference<Konfiguration>? _dotNetRef;
+    private bool _workspaceReady;
+
+    protected override void OnInitialized()
+    {
+        BlocklyState.XmlChanged += OnGlobalXmlChanged;
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (!firstRender)
         {
-            await JS.InvokeVoidAsync("blocklyInterop.init", "blockly-container");
+            return;
         }
+
+        await JS.InvokeVoidAsync("blocklyInterop.init", "blockly-container");
+
+        _dotNetRef = DotNetObjectReference.Create(this);
+        await JS.InvokeVoidAsync("blocklyInterop.subscribeWorkspaceChanges", _dotNetRef);
+
+        if (!string.IsNullOrWhiteSpace(BlocklyState.Xml))
+        {
+            await JS.InvokeVoidAsync("blocklyInterop.setXml", BlocklyState.Xml);
+        }
+        else
+        {
+            var initialXml = await JS.InvokeAsync<string>("blocklyInterop.getXml");
+            BlocklyState.SetXml(initialXml);
+        }
+
+        _workspaceReady = true;
+    }
+
+    [JSInvokable]
+    public void OnBlocklyXmlChanged(string xml)
+    {
+        BlocklyState.SetXml(xml);
+    }
+
+    private async void OnGlobalXmlChanged(string xml)
+    {
+        if (!_workspaceReady)
+        {
+            return;
+        }
+
+        await InvokeAsync(async () =>
+        {
+            var currentXml = await JS.InvokeAsync<string>("blocklyInterop.getXml");
+            if (!string.Equals(currentXml, xml ?? string.Empty, StringComparison.Ordinal))
+            {
+                await JS.InvokeVoidAsync("blocklyInterop.setXml", xml ?? string.Empty);
+            }
+        });
+    }
+
+    public ValueTask DisposeAsync()
+    {
+        BlocklyState.XmlChanged -= OnGlobalXmlChanged;
+        _dotNetRef?.Dispose();
+        return ValueTask.CompletedTask;
     }
 }
