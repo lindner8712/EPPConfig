@@ -1,0 +1,43 @@
+.navmenu-shell {
+    padding: 1.25rem 1rem;
+}
+
+.navmenu-shell__header {
+    padding: 1rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1f2240 0%, #30375f 100%);
+    color: #fff;
+    box-shadow: 0 18px 40px rgba(31, 34, 64, 0.18);
+}
+
+.navmenu-shell__overline {
+    color: rgba(255, 255, 255, 0.74);
+    letter-spacing: 0.14em;
+}
+
+.navmenu-shell__subtitle {
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.navmenu-shell__list {
+    margin-top: 1rem;
+}
+
+::deep .navmenu-shell__list .mud-nav-link {
+    margin-bottom: 0.35rem;
+    border-radius: 14px;
+    color: #1f2240;
+    font-weight: 500;
+    min-height: 48px;
+}
+
+::deep .navmenu-shell__list .mud-nav-link .mud-nav-link-icon {
+    color: #9f1d35;
+}
+
+::deep .navmenu-shell__list .mud-nav-link.active,
+::deep .navmenu-shell__list .mud-nav-link:hover {
+    background: rgba(159, 29, 53, 0.08);
+    color: #9f1d35;
+}

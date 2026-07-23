@@ -210,8 +210,6 @@ C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\Microsoft.DotNet.HotReload.WebAssembly.Browser.ccsptreuls.wasm
-C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.n3slpijkow.wasm
-C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.96zqv0j7nz.pdb
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\dotnet.js
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.4w3z20tuqk.wasm.gz
@@ -424,8 +422,6 @@ C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\Microsoft.DotNet.HotReload.WebAssembly.Browser.ccsptreuls.wasm.gz
-C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.n3slpijkow.wasm.gz
-C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.96zqv0j7nz.pdb.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\dotnet.js.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\EppConfig.Client.staticwebassets.runtime.json
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\EppConfig.Client.staticwebassets.endpoints.json
@@ -1074,9 +1070,6 @@ C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compres
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\0o80510oa8-{0}-tptq2av103-tptq2av103.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\20tyy2xu3i-{0}-lfu7j35m59-lfu7j35m59.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\j0tef16unq-{0}-ccsptreuls-ccsptreuls.gz
-C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\c9ud5bjm8c-{0}-n3slpijkow-n3slpijkow.gz
-C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\vpdb4h60os-{0}-96zqv0j7nz-96zqv0j7nz.gz
-C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\iu93jbdxs9-{0}-f8pxlo4t2c-f8pxlo4t2c.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\th8ybsb11o-{0}-x0ueugt8gp-x0ueugt8gp.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\b22v04oku4-{0}-x0ueugt8gp-x0ueugt8gp.gz
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\staticwebassets.build.json
@@ -1089,3 +1082,11 @@ C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\EppConf
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\refint\EppConfig.Client.dll
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\EppConfig.Client.pdb
 C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\ref\EppConfig.Client.dll
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.p6pru8ftm0.wasm
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.08c85tf5po.pdb
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.p6pru8ftm0.wasm.gz
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\bin\Debug\net10.0\wwwroot\_framework\EppConfig.Client.08c85tf5po.pdb.gz
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\c9ud5bjm8c-{0}-p6pru8ftm0-p6pru8ftm0.gz
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\vpdb4h60os-{0}-08c85tf5po-08c85tf5po.gz
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\compressed\iu93jbdxs9-{0}-kkj0g1hadj-kkj0g1hadj.gz
+C:\Users\Lindn\source\repos\EppConfig\EppConfig.Client\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

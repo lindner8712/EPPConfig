@@ -1,0 +1,51 @@
+.app-shell {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top right, rgba(159, 29, 53, 0.12), transparent 26%),
+        linear-gradient(180deg, #f8f9fc 0%, #f2f4f8 100%);
+}
+
+.app-shell__appbar {
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(31, 34, 64, 0.08);
+    padding-inline: 0.5rem;
+}
+
+.app-shell__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-left: 0.5rem;
+}
+
+.app-shell__eyebrow {
+    color: #9f1d35;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.app-shell__drawer {
+    border-right: 1px solid #d9deea;
+}
+
+.app-shell__content {
+    padding-top: 5.5rem;
+}
+
+.app-shell__content-inner {
+    padding: 1.5rem;
+}
+
+::deep .app-shell__appbar .mud-icon-button {
+    border-radius: 12px;
+}
+
+::deep .app-shell__appbar .mud-chip {
+    font-weight: 600;
+}
+
+@media (max-width: 959.98px) {
+    .app-shell__content-inner {
+        padding: 1rem;
+    }
+}

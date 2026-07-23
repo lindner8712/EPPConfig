@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "EppConfig.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-rb+JAX6J6BRVwDwGlyPAz2IRFhnx7q4/GlApz0L/QOQ=",
+    "hash": "sha256-6ZD2SwR0L9NHydNm/YF/ZGd44WpeuUMns1Lz0+e+VxQ=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.puryxhmhq9.js"
@@ -1260,16 +1260,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "EppConfig.Client.wasm",
-        "name": "EppConfig.Client.n3slpijkow.wasm",
-        "hash": "sha256-fQ3N5PBN+vysEVoHhP65lr1NAbABjUkkRBrYHCuUZZ0=",
+        "name": "EppConfig.Client.p6pru8ftm0.wasm",
+        "hash": "sha256-QeaOCa93pYpEfIGLIs1fmawVo9nwAVdLYAq4uOUH1to=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "EppConfig.Client.pdb",
-        "name": "EppConfig.Client.96zqv0j7nz.pdb",
-        "hash": "sha256-kaNSplIkgKArSQ0mmlfrh2uvzTJwJLVflF9j7xOdfcI=",
+        "name": "EppConfig.Client.08c85tf5po.pdb",
+        "hash": "sha256-4Ng8xf7giZpSG5ZJpN9Z55kR790BSjhyln6hWxu6s68=",
         "cache": "force-cache"
       }
     ],
@@ -1286,8 +1286,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   },
   "debugLevel": -1,
   "appsettings": [
-    "../appsettings.Development.json",
-    "../appsettings.json"
+    "../appsettings.json",
+    "../appsettings.Development.json"
   ],
   "globalizationMode": "sharded",
   "extensions": {

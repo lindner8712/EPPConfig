@@ -1,40 +1,20 @@
-﻿@page "/konfiguration"
+﻿@page "/"
+@page "/konfiguration"
 @rendermode InteractiveServer
 @inject IJSRuntime JS
 
 <PageTitle>Konfiguration</PageTitle>
 
-<MudText Typo="Typo.h4" GutterBottom="true">Konfiguration</MudText>
-<MudText Typo="Typo.body2" Class="mb-4">Blockly-Editor zur visuellen Programmierung</MudText>
-
-<MudPaper Elevation="2" Class="pa-2" Style="height: 520px;">
-    <div id="blockly-container" style="width: 100%; height: 500px;"></div>
-</MudPaper>
-
-<MudButton Variant="Variant.Filled" Color="Color.Primary" Class="mt-4" OnClick="GetXml">
-    XML anzeigen
-</MudButton>
-
-@if (!string.IsNullOrEmpty(_xml))
-{
-    <MudPaper Elevation="1" Class="pa-3 mt-3">
-        <MudText Typo="Typo.caption" Style="word-break: break-all; white-space: pre-wrap;">@_xml</MudText>
-    </MudPaper>
-}
+<div id="blockly-container"
+     style="width:100%;height:700px;border:1px solid red;">
+</div>
 
 @code {
-    private string _xml = string.Empty;
-
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await JS.InvokeVoidAsync("blocklyInterop.init", "blockly-container");
         }
-    }
-
-    private async Task GetXml()
-    {
-        _xml = await JS.InvokeAsync<string>("blocklyInterop.getXml");
     }
 }

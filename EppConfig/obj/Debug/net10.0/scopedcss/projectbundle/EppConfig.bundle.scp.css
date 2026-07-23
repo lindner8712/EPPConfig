@@ -1,3 +1,99 @@
+/* /Components/Layout/MainLayout.razor.rz.scp.css */
+.app-shell[b-daiorcer5x] {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top right, rgba(159, 29, 53, 0.12), transparent 26%),
+        linear-gradient(180deg, #f8f9fc 0%, #f2f4f8 100%);
+}
+
+.app-shell__appbar[b-daiorcer5x] {
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(31, 34, 64, 0.08);
+    padding-inline: 0.5rem;
+}
+
+.app-shell__brand[b-daiorcer5x] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-left: 0.5rem;
+}
+
+.app-shell__eyebrow[b-daiorcer5x] {
+    color: #9f1d35;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.app-shell__drawer[b-daiorcer5x] {
+    border-right: 1px solid #d9deea;
+}
+
+.app-shell__content[b-daiorcer5x] {
+    padding-top: 5.5rem;
+}
+
+.app-shell__content-inner[b-daiorcer5x] {
+    padding: 1.5rem;
+}
+
+[b-daiorcer5x] .app-shell__appbar .mud-icon-button {
+    border-radius: 12px;
+}
+
+[b-daiorcer5x] .app-shell__appbar .mud-chip {
+    font-weight: 600;
+}
+
+@media (max-width: 959.98px) {
+    .app-shell__content-inner[b-daiorcer5x] {
+        padding: 1rem;
+    }
+}
+/* /Components/Layout/NavMenu.razor.rz.scp.css */
+.navmenu-shell[b-mvsq0avq5r] {
+    padding: 1.25rem 1rem;
+}
+
+.navmenu-shell__header[b-mvsq0avq5r] {
+    padding: 1rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1f2240 0%, #30375f 100%);
+    color: #fff;
+    box-shadow: 0 18px 40px rgba(31, 34, 64, 0.18);
+}
+
+.navmenu-shell__overline[b-mvsq0avq5r] {
+    color: rgba(255, 255, 255, 0.74);
+    letter-spacing: 0.14em;
+}
+
+.navmenu-shell__subtitle[b-mvsq0avq5r] {
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.navmenu-shell__list[b-mvsq0avq5r] {
+    margin-top: 1rem;
+}
+
+[b-mvsq0avq5r] .navmenu-shell__list .mud-nav-link {
+    margin-bottom: 0.35rem;
+    border-radius: 14px;
+    color: #1f2240;
+    font-weight: 500;
+    min-height: 48px;
+}
+
+[b-mvsq0avq5r] .navmenu-shell__list .mud-nav-link .mud-nav-link-icon {
+    color: #9f1d35;
+}
+
+[b-mvsq0avq5r] .navmenu-shell__list .mud-nav-link.active,
+[b-mvsq0avq5r] .navmenu-shell__list .mud-nav-link:hover {
+    background: rgba(159, 29, 53, 0.08);
+    color: #9f1d35;
+}
 /* /Components/Layout/ReconnectModal.razor.rz.scp.css */
 #components-reconnect-modal[b-so9bz1j3s7] {
     display: none;
@@ -217,5 +313,58 @@ dialog[open].components-resume-failed .components-resume-failed-visible[b-so9bz1
 
     .components-reconnect-surface[b-so9bz1j3s7] {
         padding: 16px;
+    }
+}
+/* /Components/Pages/Konfiguration.razor.rz.scp.css */
+.config-page[b-7cug6akluz] {
+    min-height: calc(100vh - 7rem);
+}
+
+.config-page__workspace[b-7cug6akluz] {
+    height: calc(100vh - 7rem);
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #dde2ec;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(31, 34, 64, 0.08);
+}
+
+.config-page__blockly-host[b-7cug6akluz] {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fbfcfe 0%, #f1f4f9 100%);
+}
+
+[b-7cug6akluz] .config-page__blockly-host .injectionDiv {
+    position: absolute !important;
+    inset: 0;
+}
+
+[b-7cug6akluz] .config-page__blockly-host .blocklySvg {
+    border-radius: 18px;
+}
+
+[b-7cug6akluz] .config-page__blockly-host .blocklyToolboxDiv {
+    display: block !important;
+    visibility: visible !important;
+    z-index: 7;
+}
+
+[b-7cug6akluz] .config-page__blockly-host .blocklyZoom > image,
+[b-7cug6akluz] .config-page__blockly-host .blocklyTrash > image {
+    opacity: 0.9;
+}
+
+@media (max-width: 959.98px) {
+    .config-page[b-7cug6akluz] {
+        min-height: calc(100vh - 6rem);
+    }
+
+    .config-page__workspace[b-7cug6akluz] {
+        height: calc(100vh - 6rem);
+        padding: 0.5rem;
     }
 }

@@ -1,5 +1,13 @@
-﻿<MudNavMenu>
-    <MudNavLink Href="konfiguration" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Settings">Konfiguration</MudNavLink>
-    <MudNavLink Href="logger" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Logger</MudNavLink>
-    <MudNavLink Href="zielsystem" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Computer">Zielsystem</MudNavLink>
-</MudNavMenu>
+﻿<div class="navmenu-shell">
+    <div class="navmenu-shell__header">
+        <MudText Typo="Typo.overline" Class="navmenu-shell__overline">PIA Automation</MudText>
+        <MudText Typo="Typo.h6">EppConfig</MudText>
+        <MudText Typo="Typo.body2" Class="navmenu-shell__subtitle">Klare Navigation im hellen Material-Stil.</MudText>
+    </div>
+
+    <MudNavMenu Class="navmenu-shell__list">
+        <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.SettingsInputComponent">Konfiguration</MudNavLink>
+        <MudNavLink Href="/logger" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.FormatListBulleted">Logger</MudNavLink>
+        <MudNavLink Href="/zielsystem" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Memory">Zielsystem</MudNavLink>
+    </MudNavMenu>
+</div>
