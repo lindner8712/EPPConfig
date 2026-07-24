@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EppConfig")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f24ddcae0a3d9c6a42e9011a0a3362583ef6da19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a8374be6e95d895427cf6012b2089b48b2a8158")]
 [assembly: System.Reflection.AssemblyProductAttribute("EppConfig")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EppConfig")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

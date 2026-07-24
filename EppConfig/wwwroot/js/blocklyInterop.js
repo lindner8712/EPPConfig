@@ -198,6 +198,10 @@
                         .appendField(config.shortLabel);
 
                     this.appendDummyInput()
+                        .appendField("BMK")
+                        .appendField(new Blockly.FieldTextInput(""), "BMK");
+
+                    this.appendDummyInput()
                         .appendField("Wert")
                         .appendField(new Blockly.FieldNumber(0, 0, 32768, 0.01), "VALUE");
 
@@ -224,6 +228,10 @@
                     .appendField("Adapter")
                     .appendField(new Blockly.FieldTextInput("eth0"), "ADAPTER");
 
+                this.appendDummyInput()
+                    .appendField("BMK")
+                    .appendField(new Blockly.FieldTextInput(""), "BMK");
+
                 this.appendStatementInput("CHILDREN")
                     .setCheck(epp1322ConnectionType)
                     .appendField("Module");
@@ -240,6 +248,10 @@
                     .appendField(new Blockly.FieldImage("/images/blockly/epp1322-0001.svg", 88, 34, "EPP1322-0001"))
                     .appendField("EPP1322-0001")
                     .appendField("2-Kanal");
+
+                this.appendDummyInput()
+                    .appendField("BMK")
+                    .appendField(new Blockly.FieldTextInput(""), "BMK");
 
                 this.appendStatementInput("CHANNEL_1")
                     .setCheck(moduleConnectionType)

@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
 @inject IJSRuntime JS
 @inject EppConfig.Services.BlocklyStateService BlocklyState
+@inject EppConfig.Services.PersistentLogService PersistentLog
 @inject ISnackbar Snackbar
 
 <MudThemeProvider Theme="@_theme" />
@@ -67,7 +68,14 @@
         var importedXml = await JS.InvokeAsync<string>("blocklyInterop.importXmlFile");
         if (!string.IsNullOrWhiteSpace(importedXml))
         {
-            BlocklyState.SetXml(importedXml);
+            BlocklyState.SetXml(importedXml, "Import");
+
+            var masterCount = BlocklyState.Masters.Count;
+            var eppCount = BlocklyState.Masters.Sum(master => master.Children.Count);
+            var moduleCount = BlocklyState.Masters.Sum(master => master.Children.Sum(child => child.Channel1.Count + child.Channel2.Count));
+            var firstBmk = BlocklyState.Masters.Select(master => master.Bmk).FirstOrDefault(bmk => !string.IsNullOrWhiteSpace(bmk)) ?? "-";
+
+            PersistentLog.Log("Info", "Import", $"Blockly-XML importiert (Master: {masterCount}, EPP1322: {eppCount}, Module: {moduleCount}).", bmk: firstBmk);
             Snackbar.Add("Blockly-XML importiert.", Severity.Success);
         }
     }
@@ -78,10 +86,17 @@
         if (string.IsNullOrWhiteSpace(xml))
         {
             xml = await JS.InvokeAsync<string>("blocklyInterop.getXml");
-            BlocklyState.SetXml(xml);
+            BlocklyState.SetXml(xml, "ExportSync");
         }
 
         await JS.InvokeVoidAsync("blocklyInterop.exportXmlContent", xml, "eppconfig-blockly.xml");
+
+        var masterCount = BlocklyState.Masters.Count;
+        var eppCount = BlocklyState.Masters.Sum(master => master.Children.Count);
+        var moduleCount = BlocklyState.Masters.Sum(master => master.Children.Sum(child => child.Channel1.Count + child.Channel2.Count));
+        var firstBmk = BlocklyState.Masters.Select(master => master.Bmk).FirstOrDefault(bmk => !string.IsNullOrWhiteSpace(bmk)) ?? "-";
+
+        PersistentLog.Log("Info", "Export", $"Blockly-XML exportiert (Master: {masterCount}, EPP1322: {eppCount}, Module: {moduleCount}).", bmk: firstBmk);
         Snackbar.Add("Blockly-XML exportiert.", Severity.Success);
     }
 

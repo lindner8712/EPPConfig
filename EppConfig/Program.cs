@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add MudBlazor services
 builder.Services.AddMudServices();
 builder.Services.AddScoped<BlocklyStateService>();
+builder.Services.AddSingleton<PersistentLogService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -15,6 +16,9 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 var app = builder.Build();
+
+var persistentLog = app.Services.GetRequiredService<PersistentLogService>();
+persistentLog.Log("Info", "Application", "Anwendung gestartet.");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
